@@ -20,9 +20,7 @@ const Header = () => {
             height={50}
             className="rounded-xl object-cover"
           />
-          <span className="text-xl font-bold text-indigo-600">
-            Care.xyz
-          </span>
+          <span className="text-xl font-bold text-indigo-600">Care.xyz</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -31,8 +29,18 @@ const Header = () => {
           <Link href="/about" className="hover:text-indigo-600 transition">About</Link>
           <Link href="/service" className="hover:text-indigo-600 transition">Service</Link>
           <Link href="/tutorials" className="hover:text-indigo-600 transition">Tutorials</Link>
-          <Link href="/register" className="px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition">Register</Link>
-          <Link href="/login" className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 hover:bg-indigo-50 transition">Login</Link>
+          <Link
+            href="/register"
+            className="px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition"
+          >
+            Register
+          </Link>
+          <Link
+            href="/login"
+            className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 hover:bg-indigo-50 transition"
+          >
+            Login
+          </Link>
         </nav>
 
         {/* Mobile Hamburger */}
@@ -73,8 +81,18 @@ const Header = () => {
           <Link href="/about" className="block hover:text-indigo-600 transition">About</Link>
           <Link href="/service" className="block hover:text-indigo-600 transition">Service</Link>
           <Link href="/tutorials" className="block hover:text-indigo-600 transition">Tutorials</Link>
-          <Link href="/register" className="block px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition">Register</Link>
-          <Link href="/login" className="block px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 hover:bg-indigo-50 transition">Login</Link>
+          <Link
+            href="/register"
+            className="block px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition"
+          >
+            Register
+          </Link>
+          <Link
+            href="/login"
+            className="block px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 hover:bg-indigo-50 transition"
+          >
+            Login
+          </Link>
         </div>
       )}
     </header>
