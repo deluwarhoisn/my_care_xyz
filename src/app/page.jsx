@@ -12,12 +12,12 @@ export default function Home() {
     {
       title: "Elderly Care",
       description: "Compassionate support for senior family members.",
-      image: "/elderly-care.jpg",
+      image: "/images (1).jpg",
     },
     {
       title: "Sick People Service",
       description: "Professional home recovery assistance.",
-      image: "/sick-care.jpg",
+      image: "/download (1).jpg",
     },
   ];
 
