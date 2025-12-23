@@ -1,6 +1,6 @@
-"use client"; // Client Component
+"use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Title from "@/components/Title";
 
@@ -9,14 +9,6 @@ const Login = () => {
 
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Replace with your auth logic
-
-  // Redirect logged-in users to Booking page
-  useEffect(() => {
-    if (isLoggedIn) {
-      router.push("/booking");
-    }
-  }, [isLoggedIn, router]);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -25,18 +17,15 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Basic validation
     if (!form.email || !form.password) {
       setError("Email and Password are required.");
       return;
     }
 
-    // TODO: Add actual authentication API call
+    // Demo authentication (for assignment)
     if (form.email === "test@example.com" && form.password === "Password1") {
-      // Simulate login
-      setIsLoggedIn(true);
       setError("");
-      router.push("/booking"); // Redirect after successful login
+      router.push("/booking");
     } else {
       setError("Invalid email or password.");
     }
@@ -45,6 +34,7 @@ const Login = () => {
   return (
     <div className="max-w-md mx-auto mt-16 p-6 bg-white shadow rounded-lg">
       <Title>Welcome to Login</Title>
+
       <form onSubmit={handleSubmit} className="space-y-4 mt-4">
         <div>
           <label className="block mb-1">Email</label>
