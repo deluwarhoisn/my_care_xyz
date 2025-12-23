@@ -49,6 +49,7 @@ const Header = () => {
           >
             Login
           </Link>
+          <Link href="/*"></Link>
         </nav>
 
       </div>

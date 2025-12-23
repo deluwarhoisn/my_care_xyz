@@ -28,33 +28,46 @@ export default function Home() {
   ];
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-28">
 
-      {/* Hero Section */}
-      <section className="relative h-[420px] flex items-center justify-center bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 text-white text-center px-4">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Caring Hands, Happy Hearts
-          </h1>
-          <p className="text-lg md:text-xl text-white/90">
-            Reliable caregiving services for your loved ones
-          </p>
+      {/* ================= Hero / Banner Section ================= */}
+      <section className="relative h-[480px] w-full">
+        <Image
+          src="/istockphoto-1745117206-612x612.jpg"   // public folder e image rakhbe
+          alt="Caregiving Banner"
+          fill
+          priority
+          className="object-cover"
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-center px-4">
+          <div className="max-w-3xl text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              Caring Hands, Happy Hearts
+            </h1>
+            <p className="text-lg md:text-xl text-white/90">
+              Reliable caregiving services for children, elderly, and loved ones
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* About Section */}
+      {/* ================= About Section ================= */}
       <section className="max-w-5xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
         <p className="text-gray-600 text-lg leading-relaxed">
           Care.xyz connects families with trained, verified, and compassionate caregivers
-          for children, elderly, and special home care needs. Our mission is to make
-          caregiving safe, stress-free, and accessible.
+          for baby care, elderly support, and home recovery services.
+          Our goal is to make caregiving safe, stress-free, and accessible for everyone.
         </p>
       </section>
 
-      {/* Services Section */}
+      {/* ================= Services Section ================= */}
       <section className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">
+          Our Services
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
@@ -63,18 +76,15 @@ export default function Home() {
               className="bg-white rounded-xl shadow-md overflow-hidden
               hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
             >
-              {/* Card Image */}
               <div className="relative w-full aspect-[4/3]">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
 
-              {/* Card Content */}
               <div className="p-6 text-center">
                 <h3 className="text-xl font-semibold mb-2">
                   {service.title}
@@ -88,7 +98,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Success Metrics */}
+      {/* ================= Success Metrics ================= */}
       <section className="bg-indigo-600 py-16 text-white">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
           <div>
@@ -106,7 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* ================= Testimonials ================= */}
       <section className="bg-gray-50 py-20">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-12">
