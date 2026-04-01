@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); 
 
   return (
     <header className="px-4 md:px-8 py-4 border-b border-gray-200 bg-white fixed w-full z-50">
