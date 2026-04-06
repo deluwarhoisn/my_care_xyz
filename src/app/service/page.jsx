@@ -1,49 +1,69 @@
-"use client"; // make this a Client Component
+"use client";
 
-import { useRouter } from "next/navigation";
 import React from "react";
+import { useRouter } from "next/navigation";
 
-// Example service data
 const services = [
-  { id: "1", title: "Baby Care", description: "Trusted care for your little ones.", price: "$20/hr" },
-  { id: "2", title: "Elderly Care", description: "Compassionate care for seniors.", price: "$25/hr" },
-  { id: "3", title: "Sick People Service", description: "Support for home recovery.", price: "$22/hr" },
+  {
+    id: "baby-care",
+    title: "Baby Care",
+    description: "Safe, loving, and attentive support for your child.",
+    price: "$20/hr",
+  },
+  {
+    id: "elderly-care",
+    title: "Elderly Care",
+    description: "Respectful daily assistance for senior family members.",
+    price: "$25/hr",
+  },
+  {
+    id: "home-recovery",
+    title: "Home Recovery Care",
+    description: "Comfortable recovery support after illness or treatment.",
+    price: "$22/hr",
+  },
 ];
 
-const Service = ({ params }) => {
+export default function Service() {
   const router = useRouter();
-  const { service_id } = params; // App Router passes params as props
 
-  // Find selected service
-  const service = services.find((s) => s.id === service_id);
+  const handleBooking = (serviceId) => {
+    // Placeholder login state for now.
+    const isLoggedIn = false;
 
-  if (!service) return <p className="text-center mt-10">Service not found.</p>;
-
-  // Dummy login check
-  const isLoggedIn = false; // replace with your auth logic
-
-  const handleBooking = () => {
     if (isLoggedIn) {
-      router.push(`/booking/${service.id}`);
-    } else {
-      router.push("/login");
+      router.push(`/booking?service=${serviceId}`);
+      return;
     }
+
+    router.push("/login");
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <h1 className="text-4xl font-bold mb-4">{service.title}</h1>
-      <p className="text-gray-700 mb-4">{service.description}</p>
-      <p className="text-lg font-semibold mb-8">Price: {service.price}</p>
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+      <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Our Services</h1>
+      <p className="text-gray-600 mb-10 max-w-2xl">
+        Choose the care service that matches your family needs and book in a few clicks.
+      </p>
 
-      <button
-        onClick={handleBooking}
-        className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
-      >
-        Book Service
-      </button>
-    </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((service) => (
+          <article
+            key={service.id}
+            className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition"
+          >
+            <h2 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h2>
+            <p className="text-gray-600 text-sm leading-6 mb-4">{service.description}</p>
+            <p className="font-semibold text-indigo-700 mb-5">{service.price}</p>
+            <button
+              onClick={() => handleBooking(service.id)}
+              className="w-full rounded-lg bg-indigo-600 text-white py-2.5 hover:bg-indigo-700 transition"
+            >
+              Book Now
+            </button>
+          </article>
+        ))}
+      </div>
+    </section>
   );
-};
-
-export default Service;
+}
